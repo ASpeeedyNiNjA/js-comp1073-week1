@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1>JavaScript Introduction</h1>
-	<p>Hello, <em>teacher Scott</em>. This week's lesson is all about the basics of adding JavaScript to HTML and CSS.</p>
+	<h1>JavaScript Faceplant</h1>
+	<p>Hello, <em>student squidBoy!</em>. This week's lesson is all about the basics of adding JavaScript to HTML and CSS.</p>
 	<script>
 		/*
 		STEP 1: What is JavaScript?
@@ -33,25 +33,32 @@
 		Browser APIs allow JavaScript to do things like update the Document Object Model (DOM API), locate the user (Geolocation API), generate 2D and 3D graphics (Canvas and WebGL APIs), and work with audio and video (Multimedia APIs).
 		*/
 
+    // MY STEP 1: Select the h1 heading and set it to a variable 1b) Change the content of the h1 heading.
+const javaOuch = document.querySelector('h1');
+javaOuch.textContent = 'JavaScript Ouch...';
+
 		// STEP 2: Get the EM element and store as a variable
+let classVariableLet = document.querySelector('em');
+// const classVariableConst = document.querySelector('em');
+// var classVariableVar = document.querySelector('em');
+		// STEP 3: Assign a click event listener(argument1) to the above element, and call function(argument2) .addEventListener(argument1, argument2);
+classVariableLet.addEventListener('click', nameInquiry);
 
-// const classVariableConst = document.queryselector('em');
-// var classVariableVar = document.queryselector('em');
-		// STEP 3: Assign a click event listener to the above element, and call function
-classVariableLet.addEventListener('click', anAlert);
-
-function anAlert(){
-let classVariableLet= document.queryselector('em');
-alert('Grrr');
-
-}
 		// STEP 4: Creat a function that waits for click event above
-    // function profIntroduction() {
-    // }
+function anAlert(){
+let classVariableLet= document.querySelector('em');
+alert('Grrr');
+}
 			// STEP 4a: Display a prompt asking for input, and assign the input to a variable
+function nameInquiry(){
+
+let whatsErName = prompt("Eh...What's your name doc?"); //Please be aware that Douche is the suggested entry please!
+
+
 
 			// STEP 4b: Grab the input from the variable and build a new string, then change the text inside the EM element
-
+classVariableLet.textContent = "Why'd you delete my name " + whatsErName + '!';
+}
 		// }
 		// STEP 5: Comment out the addEventListener above, and replace it with an ONCLICK attribute typed directly into the EM element in the HTML - note that this is common, but it is considered to be bad practice - separate your HTML and your JS
 
