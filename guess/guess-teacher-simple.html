@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>COMP1073 Client-Side JavaScript</title>
+    <link rel="stylesheet" href="guess.css" />
+  </head>
+
+  <body>
+    <h1>Number Guessing Game</h1>
+    <p>I have picked a random number between 1 and 100. You have 10 chances to guess the number.</p>
+
+    <!-- Guessing form controls -->
+    <label for="guessField">Enter a guess: </label>
+    <input type="number" id="guessField">
+    <button>Submit guess</button>
+
+    <!-- Elements to contain feedback for user -->
+    <section>
+      <p id="lowOrHi"></p>
+    </section>
+
+    <script>            // warm, cold, or correct How to do someday.
+
+//Step.1 Creating or 'initializing' a random number variable
+var randomNumber = Math.floor(Math.random() * 100);
+console.log(randomNumber);//Check proper functioning in console.
+
+//Step.2a Create a variable for&&select the unstyled, non-operational HTML button
+var useless4nowButton = document.querySelector('button');
+
+//Step.2b Create a variable for the if else function that displays one of three answers
+var lowOrHi = document.querySelector('#lowOrHi');
+
+//Step.2c Create a variable that represents the form. (I guess here)
+var guess = document.querySelector('#guessField');
+
+//Step.3 Create a function that compares the users guess to the number pre-determined by the randomNumber variable. Based on the guess, display an answer letting the user know if they're warm, cold, or correct. // Above, below, and correct are simpler to setup.
+
+function decideIfWon() {
+//Step.3a Create or select the first option displaying "Too Low"
+  if (guess.value < randomNumber) {
+    lowOrHi.textContent = "Too low";
+  } //Initialize the second option of 'Too high'
+  else if (guess.value > randomNumber) {
+    lowOrHi.textContent = "Too high";
+  }//The user got lucky (or got clever with the console), display answer sharing correct guess
+else {
+    lowOrHi.textContent = "One in 100 odds! Correct number!!"
+  }
+}
+
+//Step.4 Make the useless button useful once more. Add a click event listener waiting for the second argument of decideIfWon function.
+useless4nowButton.addEventListener('click', decideIfWon);
+
+    </script>
+  </body>
+</html>
